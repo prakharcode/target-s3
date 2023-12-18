@@ -336,7 +336,7 @@ class FormatParquet(FormatBase):
         if self.config.get("include_process_date", None):
             key = "_PROCESS_DATE"
             parquet_schema = parquet_schema.append(
-                pyarrow.field(key, pyarrow.timestamp("s", tz="utc"))
+                pyarrow.field(key, pyarrow.timestamp("ms", tz="utc"))
             )
 
         self.parquet_schema = parquet_schema
