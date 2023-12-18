@@ -290,7 +290,7 @@ class FormatParquet(FormatBase):
                             fields.append(pyarrow.field(key, pyarrow.time64()))
                         else:
                             fields.append(
-                                pyarrow.field(key, pyarrow.timestamp("s", tz="utc"))
+                                pyarrow.field(key, pyarrow.timestamp("ms", tz="utc"))
                             )
                     else:
                         fields.append(pyarrow.field(key, pyarrow.string()))
